@@ -1,0 +1,52 @@
+:root {
+  --light-main: #a080ff;
+  --light-accent: #0069cb;
+  --light-secondary: #012345;
+
+  --dark-main: #1a1857;
+  --dark-accent: #32cae5;
+  --dark-secondary: #abcdef;
+}
+
+body {
+  background-color: var(--light-main);
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#search-form {
+  display: flex;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+#location {
+  font-family: inherit;
+  width: 100vw;
+  height: 7.5vh;
+  padding-left: 7.5vw;
+  position: relative;
+  border: none;
+  font-size: 5vh;
+  text-align: center;
+  color: var(--light-secondary);
+  
+}
+
+#search {
+  border: none;
+  background: none;
+  margin-right: 3vw;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  color: var(--light-main);
+}
+
+#search svg {
+  fill: var(--light-main);
+}
