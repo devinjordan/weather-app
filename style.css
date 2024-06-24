@@ -5,6 +5,7 @@
   --light-accent: #0069cb;
   --light-secondary: #012345;
 
+  /* TODO: Finish dark mode in JS, add button in HTML template */
   --dark-main: #1a1857;
   --dark-accent: #32cae5;
   --dark-secondary: #abcdef;
@@ -25,13 +26,14 @@ h1 {
   padding: 0;
   font-family: "Playwrite AU NSW", cursive;
   color: var(--light-secondary);
+  z-index: 1;
 }
 
 #search-form {
   display: flex;
   align-items: center;
-  margin-top: -1.8vh;
-  z-index: -1;
+  margin-top: 1vh;
+  z-index: 0;
 }
 
 #location {
