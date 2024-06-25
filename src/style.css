@@ -43,10 +43,9 @@ h1 {
   padding-left: 7.5vw;
   position: relative;
   border: none;
-  font-size: 5vh;
+  font-size: 4vh;
   text-align: center;
   color: var(--light-secondary);
-  
 }
 
 #search {
