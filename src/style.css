@@ -11,6 +11,11 @@
   --dark-secondary: #abcdef;
 }
 
+::placeholder {
+  color: var(--light-main);
+  opacity: .5;
+}
+
 body {
   background-color: var(--light-main);
   margin: 0;
@@ -61,3 +66,11 @@ h1 {
 #search svg {
   fill: var(--light-main);
 }
+
+/* .geodata {
+
+}
+
+.weather-data {
+
+} */
