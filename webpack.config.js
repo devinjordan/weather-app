@@ -10,6 +10,7 @@ module.exports = {
     new htmlWebpackPlugin({
       title: 'Output Management',
       template: './src/index.html',
+      favicon: "./src/icons/favicon.png",
     }),
   ],
   module: {
