@@ -2,7 +2,9 @@ import { format } from "date-fns";
 
 function populate(data) {
   const geoDiv = document.getElementById('geodata');
-  const weatherDiv = document.getElementById('weather-div');
+  const weatherDiv = document.getElementById('current');
+  const forecastDiv = document.getElementById('forecast');
+  const astroDiv = document.getElementById('astro');
 
   // clear previous results
   if (geoDiv.hasChildNodes) {
@@ -10,38 +12,35 @@ function populate(data) {
     weatherDiv.innerHTML = '';
   };
 
-  // location
-  createElement(geoDiv, 'h2', 'geodata', 'city', data.geodata.city + ", " + data.geodata.region);
-
-  // local time
+  // Geographical Data
+  createElement(geoDiv, 'h2', 'geodata', 'city', `${data.geodata.city}, ${data.geodata.region}`);
   createElement(geoDiv, 'h3', 'geodata', 'time', format(data.geodata.time, 'p'));
 
-  // conditions
-  createElement(weatherDiv, 'p', 'weather-data', 'conditions', data.meteorology.conditions);
-
-  // icon
+  // Current Conditions
+  createElement(weatherDiv, 'p', 'weather-data', 'conditions', data.current.conditions);
   const icon = document.createElement('img');
-  icon.src = data.meteorology.icon;
+  icon.src = data.current.icon;
   icon.id = icon;
   weatherDiv.appendChild(icon);
+  createElement(weatherDiv, 'p', 'weather-data', 'temp', `Temperature: ${data.current.temp}`);
+  createElement(weatherDiv, 'p', 'weather-data', 'feels-like', `Feels Like: ${data.current.feelsLike}`);
+  createElement(weatherDiv, 'p', 'weather-data', 'wind-speed', `Wind: ${data.current.wind}`);
+  createElement(weatherDiv, 'p', 'weather-data', 'uv', `UV Index: ${data.current.uv}`);
+  createElement(weatherDiv, 'p', 'weather-data', 'visibility', `Visibility: ${data.current.visibility}`);
 
-  // temp
-  createElement(weatherDiv, 'p', 'weather-data', 'temp', data.meteorology.temp);
+  // Forecast
+  createElement(forecastDiv, 'h3', 'forecast-data', 'forecast-header', 'Forecast');
+  createElement(forecastDiv, 'p', 'forecast-data', 'forecast-conditions', `Conditions: ${data.forecast.conditions}`);
+  createElement(forecastDiv, 'p', 'forecast-data', 'forecast-high', `High: ${data.forecast.high} °F`);
+  createElement(forecastDiv, 'p', 'forecast-data', 'forecast-low', `Low: ${data.forecast.low} °F`);
+  createElement(forecastDiv, 'p', 'forecast-data', 'forecast-precipitation', `Precipitation: ${data.forecast.precipitation}`);
+  createElement(forecastDiv, 'p', 'forecast-data', 'forecast-chanceOfRain', `Chance of Rain: ${data.forecast.chanceOfRain}`);
+  createElement(forecastDiv, 'p', 'forecast-data', 'forecast-windspeed', `Max Wind Speed: ${data.forecast.windspeed}`);
 
-  // feels like
-  createElement(weatherDiv, 'p', 'weather-data', 'feels-like', data.meteorology.feelsLike);
-  
-  // wind speed
-  createElement(weatherDiv, 'p', 'weather-data', 'wind-speed', data.meteorology.windmph);
-
-  // wind direction
-  createElement(weatherDiv, 'p', 'weather-data', 'wind-dir', data.meteorology.windDir);
-
-  // uv
-  createElement(weatherDiv, 'p', 'weather-data', 'uv', data.meteorology.uv);
-
-  // visibility
-  createElement(weatherDiv, 'p', 'weather-data', 'visibility', data.meteorology.visibility);
+  // Astronomical Data
+  createElement(astroDiv, 'h3', 'astro-data', 'astro-header', 'Astronomical Data');
+  createElement(astroDiv, 'p', 'astro-data', 'sunrise', `Sunrise: ${data.astro.sunrise}`);
+  createElement(astroDiv, 'p', 'astro-data', 'sunset', `Sunset: ${data.astro.sunset}`);
 
   function createElement(parentDiv, type, classNames, id, textContent) {
     const newElement = document.createElement(type);
