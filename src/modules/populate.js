@@ -10,6 +10,8 @@ function populate(data) {
   if (geoDiv.hasChildNodes) {
     geoDiv.innerHTML = '';
     weatherDiv.innerHTML = '';
+    forecastDiv.innerHTML = '';
+    astroDiv.innerHTML = '';
   };
 
   // Geographical Data
