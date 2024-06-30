@@ -71,3 +71,7 @@ h1 {
 #result > div {
   font-family: "Red Hat Display", sans-serif;
 }
+
+#loader {
+  display: none;
+}
