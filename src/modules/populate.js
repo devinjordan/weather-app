@@ -16,12 +16,14 @@ function populate(data) {
 
   // Geographical Data
   createElement(geoDiv, 'h2', 'geodata', 'city', `${data.geodata.city}, ${data.geodata.region}`);
-  createElement(geoDiv, 'h3', 'geodata', 'time', format(data.geodata.time, 'p'));
+  createElement(geoDiv, 'p', 'geodata', 'time', format(data.geodata.time, 'p'));
 
   // Current Conditions
+  createElement(weatherDiv, 'h3', 'weather-data', 'current-header', 'Current Conditions')
   createElement(weatherDiv, 'p', 'weather-data', 'conditions', data.current.conditions);
   const icon = document.createElement('img');
   icon.src = data.current.icon;
+  icon.alt = 'Weather Icon';
   icon.id = icon;
   weatherDiv.appendChild(icon);
   createElement(weatherDiv, 'p', 'weather-data', 'temp', `Temperature: ${data.current.temp}`);
@@ -31,7 +33,7 @@ function populate(data) {
   createElement(weatherDiv, 'p', 'weather-data', 'visibility', `Visibility: ${data.current.visibility}`);
 
   // Forecast
-  createElement(forecastDiv, 'h3', 'forecast-data', 'forecast-header', 'Forecast');
+  createElement(forecastDiv, 'h3', 'forecast-data', 'forecast-header', "Today's Forecast");
   createElement(forecastDiv, 'p', 'forecast-data', 'forecast-conditions', `Conditions: ${data.forecast.conditions}`);
   createElement(forecastDiv, 'p', 'forecast-data', 'forecast-high', `High: ${data.forecast.high} °F`);
   createElement(forecastDiv, 'p', 'forecast-data', 'forecast-low', `Low: ${data.forecast.low} °F`);

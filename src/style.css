@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
   --light-main: #a080ff;
@@ -67,10 +68,6 @@ h1 {
   fill: var(--light-main);
 }
 
-/* .geodata {
-
+#result > div {
+  font-family: "Red Hat Display", sans-serif;
 }
-
-.weather-data {
-
-} */
