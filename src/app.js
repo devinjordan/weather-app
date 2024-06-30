@@ -10,7 +10,7 @@ submitLocationRequest.addEventListener('click', async (event) => {
   let city = document.getElementById('location').value;
   if (city == '') return;
 
-  const apiRequest = `http://api.weatherapi.com/v1/forecast.json?key=c8006c9d04664d00b48232348241905&q=${city}`;
+  const apiRequest = `https://api.weatherapi.com/v1/forecast.json?key=c8006c9d04664d00b48232348241905&q=${city}`;
 
   const data = await weather.getData(apiRequest);
   // const forecastData = await weather.getData(forecastRequest);
